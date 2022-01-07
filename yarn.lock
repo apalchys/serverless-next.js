@@ -5942,7 +5942,7 @@ __metadata:
     "@types/jest": ^27.0.3
     "@types/node": 16.11.15
     "@types/yargs": 17.0.7
-    cdktf: 0.8.3
+    cdktf: 0.8.6
     cdktf-cli: 0.8.3
     constructs: 10.0.25
     esbuild: 0.14.7
@@ -8442,6 +8442,17 @@ __metadata:
   peerDependencies:
     constructs: ^10.0.12
   checksum: 2dc8100099bb81f08a931d777c36dce91fab5a265f32e712ea2dd96406f9934939e0450b1d432fecba423dfeb5318797c486fbef49568ef308ea4c21bca7e96b
+  languageName: node
+  linkType: hard
+
+"cdktf@npm:0.8.6":
+  version: 0.8.6
+  resolution: "cdktf@npm:0.8.6"
+  dependencies:
+    archiver: 5.3.0
+  peerDependencies:
+    constructs: ^10.0.25
+  checksum: 0f481992235b330a3f2f6701205f3943179e0628040b8b53ca5f78dee7549de19024c47c12456b20e00d4f4377d4be0c36df1029092d0612434df322ce31f026
   languageName: node
   linkType: hard
 

@@ -64,6 +64,9 @@ const reqResMapper = (event, callback) => {
   req.connection = {};
 
   const res = new Stream();
+  res.finished = false;
+  res.ended = false;
+
   Object.defineProperty(res, "statusCode", {
     get() {
       return response.statusCode;
@@ -119,6 +122,10 @@ const reqResMapper = (event, callback) => {
     response.multiValueHeaders = res.headers;
     res.writeHead(response.statusCode);
     fixApiGatewayMultipleHeaders();
+
+    res.ended = true;
+    res.finished = true;
+    res.emit('finish');
 
     if (callback) {
       callback(null, response);

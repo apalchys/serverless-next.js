@@ -1,9 +1,9 @@
 {
-  "name": "@sls-next/next-aws-lambda",
+  "name": "@apalchys/next-aws-lambda",
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "Compat layer between next.js serverless page and AWS Lambda",
   "files": [
     "lib/**",

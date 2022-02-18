@@ -90,8 +90,8 @@ const reqResMapper = (event, callback) => {
     res.end();
   }
   res.redirect = (destination, statusCode) => {
-    response.statusCode = statusCode;
-    response.headers["location"] = destination;
+    res.statusCode = statusCode;
+    res.setHeader("location", destination);
   }
   res.write = (chunk) => {
     if (!response.body) {

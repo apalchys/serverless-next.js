@@ -12,6 +12,7 @@ const reqResMapper = (event, callback) => {
 
   const newStream = new Stream.Readable();
   const req = Object.assign(newStream, http.IncomingMessage.prototype);
+  req.originalRequest = req;
   req.url =
     (event.requestContext.path || event.path || "").replace(
       new RegExp("^/" + event.requestContext.stage),
@@ -66,6 +67,7 @@ const reqResMapper = (event, callback) => {
   const res = new Stream();
   res.finished = false;
   res.ended = false;
+  res.originalResponse = res;
 
   Object.defineProperty(res, "statusCode", {
     get() {
@@ -80,6 +82,13 @@ const reqResMapper = (event, callback) => {
     response.statusCode = status;
     if (headers) res.headers = Object.assign(res.headers, headers);
   };
+  res.body = (body) => {
+    response.body = body;
+    return res;
+  }
+  res.send = () => {
+    res.end();
+  }
   res.write = (chunk) => {
     if (!response.body) {
       response.body = Buffer.from("");

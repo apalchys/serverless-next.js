@@ -92,6 +92,7 @@ const reqResMapper = (event, callback) => {
   res.redirect = (destination, statusCode) => {
     res.statusCode = statusCode;
     res.setHeader("location", destination);
+    return res;
   }
   res.write = (chunk) => {
     if (!response.body) {

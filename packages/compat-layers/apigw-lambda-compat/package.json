@@ -3,10 +3,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.6.3",
+  "version": "3.6.5",
   "description": "Compat layer between next.js serverless page and AWS Lambda",
   "files": [
-    "lib/**",
+    "lib/compatLayer.js",
     "index.js"
   ],
   "main": "index.js",
